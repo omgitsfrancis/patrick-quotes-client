@@ -24,9 +24,7 @@ const StyledSpeechBubble = styled(SpeechBubble)`
   position: absolute;
   top: 0;
   right: 0;
-  width: auto;;
-  
-
+  width: auto;
 `;
 
 const QuoteText = styled.span`
@@ -53,7 +51,9 @@ export default function Index() {
 
   return (
     <Container>
-      <h1 style={{textAlign: "center"}}>Patrick Quotes</h1>
+      <h1 style={{textAlign: "center", marginBottom: 0}}>Patrick Quotes</h1>
+      <span style={{marginBottom: "1.25rem"}}>By <a href="https://github.com/omgitsfrancis/patrick-star-quotes/">@omgitsfrancis</a></span>
+
       {error ? (
         <p>Error has occured</p>
       ) : (
@@ -64,7 +64,7 @@ export default function Index() {
           </StyledSpeechBubble>
         </Wrapper>
       )}
-      <Button disabled={loading} onClick={() => fetchQuote()}>Get Quote</Button>
+        <Button disabled={loading} onClick={() => fetchQuote()}>Get Quote</Button>
     </Container>
   );
 }
